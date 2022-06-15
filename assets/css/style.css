@@ -1,0 +1,775 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    background-color: #f9f9f9!important;
+    margin: 20px;
+    font-size: 50px;
+}
+
+form{
+    margin: 20px;
+}
+
+.main-container{
+  font-size:0.9rem!important;
+}
+
+/* Scroll Bar  */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+
+input::-webkit-date-and-time-value{ text-align:left; }
+
+option {
+  /* wrap text in compatible browsers */
+  -moz-white-space: pre-wrap;
+  -o-white-space: pre-wrap;
+  white-space: pre-wrap;
+  /* hide text that can't wrap with an ellipsis */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* add border after every option */
+  border-bottom: 1px solid #DDD;
+}
+
+.expandform{
+    font-weight: 500;
+    margin-bottom: 0.2rem;
+}
+
+.submitmain label{
+    font-weight: 500;
+    margin-bottom: 0.2rem;
+}
+
+.controls label{
+    font-weight: 500;
+    margin-bottom: 0.2rem;
+}
+
+#timesheetForm label{
+  font-weight: 500;
+  margin-bottom: 0.2rem;
+}
+
+.dateinput input{
+    color: #6c757d ;
+}
+
+/* table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before, table.dataTable.dtr-inline.collapsed>tbody>tr>th.dtr-control:before {
+    background-color: #0d6efd !important;
+} */
+
+table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control, table.dataTable.dtr-inline.collapsed>tbody>tr>th.dtr-control {
+    padding-left: 38px !important;
+}
+
+
+input[type="date"]::-webkit-inner-spin-button {
+    opacity: 0
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    background: url(https://cdn3.iconfinder.com/data/icons/linecons-free-vector-icons-pack/32/calendar-16.png) center/70% no-repeat;
+    color: rgba(0, 0, 0, 0);
+    opacity: 0.5
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator:hover {
+    background: url(https://cdn3.iconfinder.com/data/icons/linecons-free-vector-icons-pack/32/calendar-16.png) center/70% no-repeat;
+    opacity: 0.8
+}
+
+/* datatable styling */
+h5 {
+	font-family: 'Helvetica Neue UltraLight', 'Raleway', 'Helvetica Neue', Arial, Helvetica, sans-serif!important;
+    font-weight: 100;
+    letter-spacing: 1px;
+	font-size: 3em;
+	line-height: 1em;
+}
+
+h5 span {
+	font-size: 0.5em;
+	line-height: 1em;
+}
+div.dataTables_wrapper div.dataTables_filter label {
+  padding-bottom: 0.5rem!important;
+}
+div.dataTables_wrapper div.dataTables_info {
+  padding-top: 0.50em!important;
+}
+#tblService_paginate{
+  padding-top: 0.50em!important;
+  padding-bottom: 1rem!important;
+}
+
+.paginate_button.current {
+  color: #000000!important;
+  background: #c7c7c7!important;
+}
+.paginate_button {
+  color: #000000!important;
+  border:  none!important;
+}
+
+table.dataTable.nowrap th, table.dataTable.nowrap td {
+  border-top: 1px solid #dddddd;
+  border-bottom: none;
+}
+table.dataTable.no-footer {
+  border-bottom: 1px solid #dddddd!important;
+}
+
+ .info-icon{
+  vertical-align:bottom!important;
+  color: #c7c7c7!important;
+  float: left;
+  box-shadow: 0 0 0.2em #444!important;
+  border-radius: 1em!important;
+  font-size: 1.2rem!important;
+  border: none!important;
+  padding:0!important;
+} 
+
+/* newtimesheet.php */
+.timesheet-container{
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+
+.week-selection{
+  font-size:0.9rem; 
+  background-color: #0d6efd; 
+  position:absolute; 
+  top: 0!important;
+  z-index: 2;
+  width: 100%;
+  height:40%;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+
+.week-selection-container{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -moz-transform: translate(-50%, -50%); /* Firefox */
+  -ms-transform: translate(-50%, -50%);  /* IE 9 */
+  -webkit-transform: translate(-50%, -50%); /* Safari and Chrome*/
+  -o-transform: translate(-50%, -50%); /* Opera */
+  transform: translate(-50%, -50%);
+
+  /* optional size in px or %: */
+  width: 30%;
+}
+
+.timesheet-header{
+  width: 100%;
+  height:15%; 
+  background-color: #0d6efd;
+  top: 0!important;
+  position:fixed; 
+  z-index:1;    
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  color:white;
+}
+.timesheet-header-front{
+  left: 50%;
+  top: 50%;
+  -moz-transform: translate(-50%, -50%); /* Firefox */
+  -ms-transform: translate(-50%, -50%);  /* IE 9 */
+  -webkit-transform: translate(-50%, -50%); /* Safari and Chrome*/
+  -o-transform: translate(-50%, -50%); /* Opera */
+  transform: translate(-50%, -50%);
+}
+
+.week-selection-container label{
+  color: white;
+  font-weight: 500;
+}
+.card-header{
+  margin-top: 1rem;
+  margin-right:1rem;
+  margin-left:1rem;
+  border: 1px solid rgba(0,0,0,.125);
+  box-shadow: 3px 3px 10px 3px #d3d3d354;
+  border-radius: 15px!important;
+}
+.card-head{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+}
+
+.week-list{
+  max-height:100%!important;   
+} 
+
+.day-head{
+  font-weight: 500;
+}
+
+.day-list{
+  margin-top: 1rem;
+  margin-right:1rem;
+  margin-left:1rem;
+  box-shadow: 3px 3px 10px 3px #d3d3d333;
+  height:110px;
+  border-radius: 10px!important;
+}
+.list-group-item+.list-group-item {
+   border-top-width: 1px!important; 
+}
+.last-day-list{
+  margin-bottom:1rem;
+}
+.day-detail{
+  text-align: center;
+  width:30%!important;
+}
+.date-head{
+    font-weight: 500;
+    font-size: 1.7rem;
+}
+.time-head{
+    width:40%!important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hours-head{
+    width:30%!important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* timesheet edit modal  */
+
+@media (min-width: 576px){
+  .edit-modal-dialog {
+   left: 50%!important;
+   transform: translate(-50%)!important;
+   max-width:650px!important;
+  }
+}
+.edit-modal-dialog{
+  position:fixed!important;
+   top:auto!important;
+   right:auto!important;
+   left:auto;
+   bottom:0!important;
+   width: 96%!important;
+}
+.animate-bottom {
+  -webkit-animation-name: animatebottom;
+  animation-name: animatebottom;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@keyframes animatebottom {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0,200%, 0);
+    transform: translate3d(0,200%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@-webkit-keyframes animatebottom {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0,200%, 0);
+    transform: translate3d(0,200%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+}
+.menu-container {
+  padding: 8px 0 10px 0;
+  background: #444;
+  position: relative;
+  display: none;
+  z-index: 2000;
+}
+.menu-btn {
+  position: relative;
+  text-align: center;
+}
+.menu-btn a {
+  display: inline-block;
+  width: 90px;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  font-size: 14px;
+  color: #fff;
+  background: #F76753;
+  text-decoration: none !important;
+}
+.timesheet-detail{
+  background: #F76753;
+}
+
+.menu-btn:hover{
+  animation:  shake 0.8s;
+}
+
+.menu-btn:hover .overlay{
+  animation:  shake 0.8s;
+}
+
+@keyframes shake{
+  0%{
+    transform: translateY(0)
+  }
+  25%{
+    transform: translateY(15px);
+  }
+  /* 50%{
+    transform: translateY(-25px);
+  } */
+  100%{
+    transform: translateY(0px);
+  }
+}
+
+.overlay {
+  position: fixed; /* Sit on top of the page content */
+  /* display: none; */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+  z-index: 1; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
+}
+
+
+.post-wall {
+  max-height: 300px;
+  margin-bottom: 10px;
+  overflow:scroll;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  /* background: #FFF;
+  border: #e0dfdf 1px solid;
+  padding: 20px;
+  border-radius: 5px;
+  margin: 0 auto;
+  width: 500px; */
+}
+
+.post-item {
+  padding: 15px 5px 0px 10px;
+  border: #f3f3f3 1px solid;
+  border-radius: 5px;
+  margin-bottom: 2px;
+}
+
+.post-title {
+  /* color: #4faae6; */
+  font-weight: 500;
+}
+
+.ajax-loader {
+  padding-top: 10px;
+  display: block;
+  text-align: center;
+}
+.ajax-loader img {
+  width: 50px;
+  vertical-align: middle;
+}
+
+.list-selected{
+    width: 100%;
+    border: 3px #82abe9 solid;
+    background-color: #ededed;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+}
+
+.err-box{
+  border-color: red!important;
+  border-style: dashed!important;
+}
+
+@media screen and (max-width: 640px){
+  .dataTables_wrapper .dataTables_filter {
+      float: right!important; 
+      text-align: right;
+  }
+  .dataTables_wrapper .dataTables_filter input{
+    border-radius: 1px;
+  }
+  .dataTables_wrapper .dataTables_paginate .paginate_button{
+    padding: 0.5em 0.6em!important;
+  }
+  .dataTables_wrapper .dataTables_paginate .ellipsis {
+    padding: 0 0.5em!important;
+  }
+  #tblService_previous, #tblService_next{
+    padding-left:.5rem!important;
+    padding-right:.5rem!important;
+  }
+  body , .btn, .form-control {
+    font-size: .9rem!important;
+  }
+  .remove-btn-expenseline, .remove-btn-taskline{
+    height: 2.4rem;
+  }
+  .wrapper-expenseline .card-header, .wrapper-taskline .card-header{
+    padding-top: 0.5rem!important;
+  }
+  .week-selection-container{
+    width: 80%;
+  }
+}
+@media only screen and (min-width: 1200px) {
+    .main{
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+    
+    .main-container{
+      max-width:1140px!important;
+    }
+    
+    .displaytable{
+        border: 1.5px solid #ced4da; 
+        padding: 3px;
+        width: 55%;
+    }
+    #welcomemsg{
+        font-size: 40px;
+        margin-bottom: 10px;
+        padding: 0;
+        margin-top: -35px;
+        font-weight: 400;
+    }
+    #divline{
+        display: none;
+    }
+
+    .submitmain{
+        display: flex;
+        justify-content: center;
+    }
+
+    .inputfield{
+        display: flex;
+    }
+
+    .submitmain label{
+        width: 300px;
+        font-weight: 500;
+    }
+
+    .controls label{
+        font-weight: 500;
+    }
+
+    #timesheetForm label{
+      font-weight: 500;
+    }
+
+    .formbutton{
+        margin-top: 1rem;
+    }
+  
+    #fupForm{
+      width: 40%;
+    }
+  }
+
+  @media only screen and (min-width: 600px) {
+    .submitmain{
+        display: flex;
+        justify-content: center;
+    }
+
+    .inputfield{
+        display: flex;
+    }
+
+    .submitmain label{
+        width: 300px;
+    }
+
+    h5 span {
+      display: block;
+    }
+
+    .main-container{
+      font-size:0.8rem!important;
+      padding-left: 10%!important;
+      padding-right: 10%!important;
+    }
+  }
+
+@media only screen and (max-width: 600px) {
+    .formbutton{
+        display: flex;
+        justify-content: center;
+    }
+    .submitBtn, .resetBtn{
+            width: 55%;
+            height: 18%;
+        }
+    .dateinput input{
+        padding-right: 0.1rem;
+        padding-left: 0.3rem;
+    }
+  }
+
+
+
+
+  
+.preloader {
+  position: fixed;
+  left: 0;
+  width: 0;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  z-index: 9999999;
+  -webkit-transition: .9s;
+  transition: .9s;
+}
+
+.preloader .loader {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: inline-block;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: 45%;
+  -webkit-transform: translateY(-45%);
+          transform: translateY(-45%);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.preloader .loader .loader-outter {
+  position: absolute;
+  border: 4px solid #ffffff;
+  border-left-color: transparent;
+  border-bottom: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  -webkit-animation: loader-outter 1s cubic-bezier(0.42, 0.61, 0.58, 0.41) infinite;
+          animation: loader-outter 1s cubic-bezier(0.42, 0.61, 0.58, 0.41) infinite;
+}
+
+.preloader .loader .loader-inner {
+  position: absolute;
+  border: 4px solid #ffffff;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  left: calc(40% - 21px);
+  top: calc(40% - 21px);
+  border-right: 0;
+  border-top-color: transparent;
+  -webkit-animation: loader-inner 1s cubic-bezier(0.42, 0.61, 0.58, 0.41) infinite;
+          animation: loader-inner 1s cubic-bezier(0.42, 0.61, 0.58, 0.41) infinite;
+}
+
+.preloader .loader .indicator {
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%) scale(1.5);
+          transform: translateY(-50%) scale(1.5);
+}
+
+.preloader .loader .indicator svg polyline {
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.preloader .loader .indicator svg polyline#back {
+  stroke: #ffffff;
+}
+
+.preloader .loader .indicator svg polyline#front {
+  stroke: #1A76D1;
+  stroke-dasharray: 12, 36;
+  stroke-dashoffset: 48;
+  -webkit-animation: dash 1s linear infinite;
+          animation: dash 1s linear infinite;
+}
+
+.dangermessage .loader .indicator svg polyline#front {
+  stroke: #d11a1a !important;
+}
+
+.preloader::before, .preloader::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 60%;
+  z-index: -1;
+  background: #1A76D1;
+  -webkit-transition: .9s;
+  transition: .9s;
+}
+
+.dangermessage::before, .dangermessage::after {
+  background: #d11a1a !important;
+}
+
+.preloader::after {
+  left: auto;
+  right: 0;
+}
+
+.preloader.preloader-deactivate {
+  visibility: hidden;
+}
+
+.preloader.preloader-deactivate::after, .preloader.preloader-deactivate::before {
+  width: 0;
+}
+
+.preloader.preloader-deactivate .loader {
+  opacity: 0;
+  visibility: hidden;
+}
+
+@-webkit-keyframes loader-outter {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes loader-outter {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes loader-inner {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg);
+  }
+}
+
+@keyframes loader-inner {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg);
+  }
+}
+
+@-webkit-keyframes dash {
+  62.5% {
+    opacity: 0;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes dash {
+  62.5% {
+    opacity: 0;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.userfrm_err span {
+  width: 80%;
+  height: 35px;
+  margin: 3px 10%;
+  font-size: 1.1em;
+  color: #D83D5A;
+}
+.userfrm_err input {
+  border: 1px solid #D83D5A;
+}
+
+.list-group{
+  max-height: 300px;
+  margin-bottom: 10px;
+  overflow:scroll;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
