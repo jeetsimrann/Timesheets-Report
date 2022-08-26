@@ -2,7 +2,7 @@
 require_once('dbconnect.php');
 
 $lastId = $_GET['lastId'];
-$sqlQuery = "SELECT TOP (10) dbo.tblCustOrders.*, dbo.tblCustomers.CustomerName FROM dbo.tblCustOrders LEFT JOIN dbo.tblCustomers ON dbo.tblCustOrders.CustID = dbo.tblCustomers.CustID WHERE dbo.tblCustOrders.OrderID < '" .$lastId . "' ORDER BY dbo.tblCustOrders.OrderID DESC";
+$sqlQuery = "SELECT TOP (10) dbo.tblCustOrders.*, dbo.tblCustomers.CustomerName FROM dbo.tblCustOrders LEFT JOIN dbo.tblCustomers ON dbo.tblCustOrders.CustID = dbo.tblCustomers.CustID WHERE (dbo.tblCustOrders.OrderID < '" .$lastId . "' AND NOT OrderNo like '%Q%') ORDER BY dbo.tblCustOrders.OrderID DESC";
 $result = sqlsrv_query($conn,$sqlQuery, $params, $options) or die("Couldn't execut query");
 
 

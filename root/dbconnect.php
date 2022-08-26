@@ -2,9 +2,9 @@
 /*Connect using SQL Server authentication.*/  
 $serverName = "TEAM";  
 $connectionOptions = array(  
-    "Database" => "TEAMOffline",  
-    "UID" => "sa",  
-    "PWD" => "langen!123",
+    "Database" => "TEAM",  
+    "UID" => "TEAMAccess",  
+    "PWD" => "9054535894pL",
     "CharacterSet"=>"UTF-8" 
 );  
 $conn = sqlsrv_connect($serverName, $connectionOptions);  

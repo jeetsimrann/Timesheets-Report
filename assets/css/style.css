@@ -197,15 +197,28 @@ table.dataTable.no-footer {
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
   color:white;
+  padding-top: 1rem;
 }
 .timesheet-header-front{
-  left: 50%;
-  top: 50%;
+  /* left: 5%; */
+  /* right: -5%; */
+
+  /* top: 50%; */
+  position: relative;
+  font-weight: 500;
+  font-size: 1rem;
   -moz-transform: translate(-50%, -50%); /* Firefox */
   -ms-transform: translate(-50%, -50%);  /* IE 9 */
   -webkit-transform: translate(-50%, -50%); /* Safari and Chrome*/
   -o-transform: translate(-50%, -50%); /* Opera */
   transform: translate(-50%, -50%);
+}
+
+.timesheet-header-hours{
+  /* right: 5%; */
+  /* top: 25%; */
+  position: relative;
+  text-align: center;
 }
 
 .week-selection-container label{
@@ -251,14 +264,14 @@ table.dataTable.no-footer {
 }
 .day-detail{
   text-align: center;
-  width:30%!important;
+  width:25%!important;
 }
 .date-head{
     font-weight: 500;
     font-size: 1.7rem;
 }
 .time-head{
-    width:40%!important;
+    width:45%!important;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -268,6 +281,15 @@ table.dataTable.no-footer {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.wrapper-mon {
+  display: flex;
+  flex-direction: column;
+}
+
+.tsjobcard {
+  order: 3;
 }
 
 /* timesheet edit modal  */
@@ -550,6 +572,12 @@ table.dataTable.no-footer {
       font-size:0.8rem!important;
       padding-left: 10%!important;
       padding-right: 10%!important;
+    }
+    
+    .add-btn-mon{
+      padding-top: 2%;
+      padding-bottom: 2%;
+      width: 35%;
     }
   }
 

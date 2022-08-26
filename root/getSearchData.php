@@ -2,7 +2,11 @@
 require_once('dbconnect.php');
 
 $searchData = $_GET['searchData'];
-$sqlQuery = "SELECT TOP (10) dbo.tblCustOrders.*, dbo.tblCustomers.CustomerName FROM dbo.tblCustOrders LEFT JOIN dbo.tblCustomers ON dbo.tblCustOrders.CustID = dbo.tblCustomers.CustID WHERE OrderNo LIKE '%" .$searchData . "%'";
+$sqlQuery = "SELECT TOP (30) dbo.tblCustOrders.*, dbo.tblCustomers.CustomerName 
+             FROM dbo.tblCustOrders LEFT JOIN dbo.tblCustomers ON dbo.tblCustOrders.CustID = dbo.tblCustomers.CustID 
+             WHERE (OrderNo LIKE '%" .$searchData . "%' 
+             OR dbo.tblCustomers.CustomerName LIKE '%" .$searchData . "%'
+             OR dbo.tblCustOrders.Title LIKE '%" .$searchData . "%') AND NOT OrderNo like '%Q%'";
 $result = sqlsrv_query($conn,$sqlQuery, $params, $options) or die("Couldn't execut query");
 
 while ($row= sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC)){
